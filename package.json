@@ -1,0 +1,10 @@
+{
+  "name": "megaprompter",
+  "version": "1.0.0",
+  "description": "Music teleprompter for chords and lyrics",
+  "private": true,
+  "scripts": {
+    "build-index": "node build-index.js",
+    "start": "npx serve . -l 3333"
+  }
+}
