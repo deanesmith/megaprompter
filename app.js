@@ -8,7 +8,7 @@ const backBtn = document.getElementById('back-btn');
 let songs = [];
 
 async function loadSongList() {
-  const res = await fetch('songs.json');
+  const res = await fetch('songs.json?_=' + Date.now());
   songs = await res.json();
   renderList();
 }
@@ -31,7 +31,7 @@ async function openSong(filename) {
   listView.hidden = true;
   songView.hidden = false;
 
-  const res = await fetch('songs/' + encodeURIComponent(filename));
+  const res = await fetch('songs/' + encodeURIComponent(filename) + '?_=' + Date.now());
   const arrayBuffer = await res.arrayBuffer();
   const result = await mammoth.convertToHtml({ arrayBuffer });
   songContent.innerHTML = result.value;
