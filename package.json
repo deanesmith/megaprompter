@@ -5,6 +5,6 @@
   "private": true,
   "scripts": {
     "build-index": "node build-index.js",
-    "start": "npx serve . -l 3333"
+    "start": "npx serve . -l 3333 -n"
   }
 }

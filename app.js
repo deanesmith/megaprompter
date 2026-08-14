@@ -34,7 +34,9 @@ async function openSong(filename) {
   const res = await fetch('songs/' + encodeURIComponent(filename) + '?_=' + Date.now());
   const arrayBuffer = await res.arrayBuffer();
   const result = await mammoth.convertToHtml({ arrayBuffer });
-  songContent.innerHTML = result.value;
+  // Strip inline styles from converted HTML so CSS can control appearance
+  const cleaned = result.value.replace(/ style="[^"]*"/g, '');
+  songContent.innerHTML = cleaned;
   songContent.scrollTop = 0;
   window.location.hash = encodeURIComponent(filename);
 }

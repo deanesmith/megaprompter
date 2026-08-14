@@ -53,10 +53,14 @@ h1 {
   background: #666;
 }
 
-#song-content {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 28px;
+#song-content,
+#song-content * {
+  font-family: "Arial Narrow", "Helvetica Narrow", "Liberation Sans Narrow", sans-serif !important;
+  font-size: 28px !important;
   line-height: 1.6;
+}
+
+#song-content {
   white-space: pre-wrap;
   padding-bottom: 40px;
 }

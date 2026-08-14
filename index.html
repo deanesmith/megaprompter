@@ -7,7 +7,8 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Megaprompter</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" id="app-css">
+  <script>document.getElementById('app-css').href = 'styles.css?_=' + Date.now();</script>
 </head>
 <body>
 
@@ -23,6 +24,10 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
-  <script src="app.js"></script>
+  <script>
+    var s = document.createElement('script');
+    s.src = 'app.js?_=' + Date.now();
+    document.body.appendChild(s);
+  </script>
 </body>
 </html>
